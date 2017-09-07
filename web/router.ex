@@ -18,7 +18,7 @@ defmodule BlogPhoenix.Router do
 
     get "/", PageController, :index
     resources "/post", PostController do
-      post "/comment", PostController, :add_comment
+      resources "/comment", CommentController, only: [:create]
     end
   end
 

@@ -2,9 +2,8 @@ defmodule BlogPhoenix.Comment do
   use BlogPhoenix.Web, :model
 
   schema "comments" do
-    field :name, :string
-    field :content, :string
-    belongs_to :post, BlogPhoenix.Post, foreign_key: :post_id
+    field :body, :string
+    belongs_to :post, BlogPhoenix.Post
 
     timestamps()
   end
@@ -14,7 +13,7 @@ defmodule BlogPhoenix.Comment do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:name, :content])
-    |> validate_required([:name, :content])
+    |> cast(params, [:body])
+    |> validate_required([:body])
   end
 end

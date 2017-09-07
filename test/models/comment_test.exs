@@ -3,7 +3,7 @@ defmodule BlogPhoenix.CommentTest do
 
   alias BlogPhoenix.Comment
 
-  @valid_attrs %{content: "some content", name: "some content"}
+  @valid_attrs %{body: "some content"}
   @invalid_attrs %{}
 
   test "changeset with valid attributes" do
